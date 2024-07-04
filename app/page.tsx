@@ -20,8 +20,11 @@ function HomePage() {
   const handleCalculate = () => {
     const num1 = parseFloat(state.dividend as string);
     const num2 = parseFloat(state.divisor as string);
-    const pow = parseFloat(state.power as string);
-
+    let pow = parseFloat(state.power as string);
+   
+    if (isNaN(pow)) {
+      pow = 1; // Default power to 1 if not entered
+    }
     if (!isNaN(num1) && !isNaN(num2) && !isNaN(pow) && num2 !== 0) {
       const modResult = ((Math.pow(num1, pow) % num2) + num2) % num2;
       setState({ ...state, result: modResult });
