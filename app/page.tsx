@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import "./globals.css";
+import Head from 'next/head';
 
 interface CalculatorState {
   dividend: number | string;
@@ -40,6 +41,20 @@ function HomePage() {
 
   return (
     <div className="calculator">
+         <Head>
+        <title>Mod Calculator with Power | Mod calculator App</title>
+        <meta name="description" content="Calculate modulus with power operations easily using our mod calculator." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://modcalc.vercel.app/" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://modcalc.vercel.app/",
+            "@type": "WebPage",
+            "name": "Mod Calculator with Power",
+            "description": "Calculate modulus with power operations easily using our mod calculator."
+          })}
+        </script>
+      </Head>
       <h1>Mod Calculator with Power</h1>
       <div className="input-fields">
         <label htmlFor="dividend">Dividend (a):</label>
